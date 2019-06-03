@@ -6,9 +6,8 @@
 * 功能  :
 */
 namespace logoove;
-//include_once __DIR__."/until.php";
 class fn{
- public static function qq2(){
-     return qq();
+ public static function test(){
+     return '测试';
  }
 }

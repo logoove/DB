@@ -64,3 +64,6 @@ if (!function_exists('json')) {
         exit(json_encode($json, JSON_UNESCAPED_UNICODE));
     }
 }
+function qq(){
+    return "你好";
+}

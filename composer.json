@@ -11,7 +11,7 @@
     ],
     "require": {},
     "autoload": {
-        "files":["until.php"],
+        "files":["src/until.php"],
         "psr-4": {
             "logoove\\fn\\": "src"
         }

@@ -9,6 +9,6 @@ namespace logoove\fn;
 include_once __DIR__."/until.php";
 class fn{
  public static function qq2(){
-     return "vsgo";
+     return "vsgo90";
  }
 }

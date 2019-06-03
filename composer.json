@@ -1,0 +1,19 @@
+{
+    "name": "logoove/fn",
+    "type": "library",
+    "description":"函数库集合",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "yoby",
+            "email": "logove@qq.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "files":["until.php"],
+        "psr-4": {
+            "logoove\\fn\\": "src"
+        }
+    }
+}

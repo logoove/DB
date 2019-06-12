@@ -661,27 +661,6 @@ if (!function_exists('xml2arr')) {
         }
     }
 }
-/*
-创建文件或文件夹
-参数是数组
-["qq/","qq.txt","qqq/tt/"];
-*/
-if (!function_exists('filecreate')) {
-    function filecreate($files)
-    {
-        foreach ($files as $key => $value) {
-            if (substr($value, -1) == '/') {
-                if (!is_dir($value)) {
-                    mkdir($value, 0777, true);
-                }
-            } else {
-                if (!file_exists($value)) {
-                    file_put_contents($value, '');
-                }
-            }
-        }
-    }
-}
 /**
  *
  * @param undefined $type 弹出类型 1,2,3
@@ -830,3 +809,55 @@ if (!function_exists('id')) {
         return md5(uniqid());
     }
 }
+/*创建文件夹
+支持多级目录
+*/
+if (!function_exists('mkdirs')) {
+    function mkdirs($path)
+    {
+        if (!is_dir($path)) {
+            mkdirs(dirname($path));
+            mkdir($path);
+        }
+
+        return is_dir($path);
+    }
+}
+/**
+ * @param 文件路径
+ * @param $data 数据
+ * @return bool
+ */
+if (!function_exists('putfile')) {
+function putfile($filename, $data) {
+    mkdirs(dirname($filename));
+    file_put_contents($filename, $data);
+    return is_file($filename);
+}}
+/*
+ * 读取文件
+ */
+if (!function_exists('getfile')) {
+function getfile($filename) {
+    if (!is_file($filename)) {
+        return false;
+    }
+    return file_get_contents($filename);
+}}
+/*
+ * 生成图片base64图片
+ */
+/**
+ * @param $path 路径不含最后/
+ * @param $data base64数据
+ */
+function upimg64($path,$data){
+    if (preg_match('/^(data:\s*image\/(\w+);base64,)/', $data, $result)) {
+        $type = ".".$result[2];
+        $path1  =$path."/".id().$type;
+    }
+    $img =  base64_decode(str_replace($result[1], '', $data));
+    filewrite($path1, $img);
+    return $path1;
+}
+

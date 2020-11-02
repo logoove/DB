@@ -1,6 +1,11 @@
 ### PDO数据库操作
 
+### 安装
+`composer require logoove/db`
+
 ~~~
+use logoove\DB;
+
 通过文件生成数据表,或者通过数据表生成数据库php文件
 连接数据库mysql
  $db = new DB('localhost','root','','3306','test','ims_');

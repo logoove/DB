@@ -1,20 +1,19 @@
 {
-    "name": "logoove/fn",
-    "type": "library",
-    "description":"函数库集合,适用于任意环境,本身无依赖!",
-    "keywords":["函数","微擎"],
+    "name": "db/logoove",
+    "description": "PDO封装的数据库操作,通过php建立字段自动同步创建数据表,生成自动演示数据",
+    "keywords": ["pdo", "db", "faker"],
     "license": "MIT",
     "authors": [
         {
-            "name": "yoby",
+            "name": "Yoby",
             "email": "logove@qq.com"
         }
     ],
     "require": {
-    "php": ">=5.4.0"
+        "php": ">=5.6"
     },
     "autoload": {
-        "files":["src/until.php"],
+        "files":["src/fn.php"],
         "psr-4": {
             "logoove\\": "src"
         }

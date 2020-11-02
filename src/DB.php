@@ -78,7 +78,7 @@ class DB
         $this->post = $post;
         $this->database = $database;
         $this->tablepre=$tablepre;
-        $this->db = new PDO("mysql:dbname={$database};host={$host};port={$post};charset=utf8", $username, $password);
+        $this->db = new \PDO("mysql:dbname={$database};host={$host};port={$post};charset=utf8", $username, $password);
         $sql = "SET NAMES 'utf8';";
         $this->db->exec($sql);
         $this->db->exec("SET sql_mode='';");

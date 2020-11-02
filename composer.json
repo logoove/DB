@@ -1,5 +1,5 @@
 {
-    "name": "db/logoove",
+    "name": "logoove/db",
     "description": "PDO封装的数据库操作,通过php建立字段自动同步创建数据表,生成自动演示数据",
     "keywords": ["pdo", "db", "faker"],
     "license": "MIT",

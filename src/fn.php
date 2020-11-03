@@ -3462,3 +3462,13 @@ function we7_table($title="",$data=[]){
 EOF;
 return $str2;
 }
+
+/**
+ * @param $array
+ * @return 找出数组中重复元组组成新数组
+ */
+function unarray($array) {
+    $unique_arr = array_unique ( $array );
+    $repeat_arr = array_diff_assoc ( $array, $unique_arr );
+    return $repeat_arr;
+}
